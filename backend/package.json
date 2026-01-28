@@ -12,6 +12,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@arcjet/inspect": "^1.0.0",
+    "@arcjet/node": "^1.0.0",
     "bcryptjs": "^3.0.3",
     "chat-app": "file:..",
     "cloudinary": "^2.9.0",

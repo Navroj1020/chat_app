@@ -39,7 +39,7 @@ export const sendMessage = async (req, res) => {
     const { id: receiverId } = req.params;
     const senderId = req.user._id;
 
-    if(!test && !image){
+    if(!text && !image){
         return res.status(400).json({message:"Cannot send empty messages"});
     }
     if(senderId.equals(receiverId)){
@@ -50,7 +50,7 @@ export const sendMessage = async (req, res) => {
         return res.status(404).json({message:"Reciever not found"})
     }
     let imageUrl;
-    if (imageUrl) {
+    if (image) {
       const uploadResponse = await cloudinary.uploader.upload(image);
       imageUrl = uploadResponse.secure_url;
     }
@@ -66,7 +66,7 @@ export const sendMessage = async (req, res) => {
 
     res.status(201).json(newMessage);
   } catch (error) {
-    console.log("Error in sendMessages controller: ", error.message);
+    console.log("Error in sendMessage controller: ", error.message);
     res.status(500).json({ error: "Internal server error" });
   }
 };

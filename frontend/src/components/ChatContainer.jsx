@@ -93,7 +93,7 @@ function ChatContainer() {
                     )}
 
                     {msg.text && (
-                      <p className="leading-relaxed break-words">{msg.text}</p>
+                      <p className="leading-relaxed wrap-break-words">{msg.text}</p>
                     )}
                   </div>
 

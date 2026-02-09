@@ -53,7 +53,7 @@ function ChatContainer() {
                   <div className="chat-image avatar">
                     <div className="w-9 rounded-full ring ring-base-300 ring-offset-base-100 ring-offset-2">
                       <img
-                        src={isMe ? authUser.profilePic : selectedUser.profilePic}
+                        src={(isMe ? authUser.profilePic : selectedUser.profilePic) || "avatar.png"}
                         alt="avatar"
                       />
                     </div>
@@ -86,7 +86,7 @@ function ChatContainer() {
                   >
                     {msg.image && (
                       <img
-                        src={msg.image}
+                        src={msg.image || "avatar.png"}
                         alt="shared"
                         className="rounded-xl mb-2 h-48 w-full object-cover border border-base-300"
                       />
